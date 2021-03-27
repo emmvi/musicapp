@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component } from 'react';
-
 import {
   ImageBackground,
   Image,
@@ -15,11 +14,12 @@ import {
 
 import bgImage from './assets/background.jpg'
 import logo from './assets/vd-logowhite.png'
- import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Ionicons'
+
 
 const { width: WIDTH } = Dimensions.get('window')
 
-export default class Example extends Component {
+export default class Signup extends Component {
   constructor() {
     super()
     this.state = {
@@ -42,8 +42,6 @@ export default class Example extends Component {
       })
     }
   }
-
-
   render() {
     return (
       <ImageBackground source={bgImage} style={styles.backgroundContainer}>
@@ -53,44 +51,87 @@ export default class Example extends Component {
         </View>
 
         <View style={styles.inputContainer}>
-          <Icon name={'ios-person-outline'} size={25} color={'rgba(255,255,255,0.7)'}
-            style={styles.inputIcon} />
+          
           <TextInput
             style={styles.input}
-            placeholder={'Username'} paddingLeft={60}
+            placeholder={'First Name'} 
             placeholderTextColor={'rgba(255,255,255,0.7)'}
             underlineColorAndroid='transparent'
           />
         </View>
 
         <View style={styles.inputContainer}>
-          <Icon name={'ios-key-outline'} size={25} color={'rgba(255,255,255,0.7)'}
-            style={styles.inputIcon} />
+         
           <TextInput
             style={styles.input}
-            placeholder={'Password'} paddingLeft={60}
+            placeholder={'Last Name'} 
             secureTextEntry={this.state.showPass}
             placeholderTextColor={'rgba(255,255,255,0.7)'}
             underlineColorAndroid='transparent'
           />
+          </View>
+          <View style={styles.inputContainer}>
+         
+          <TextInput
+            style={styles.input}
+            placeholder={'Username'} 
+            secureTextEntry={this.state.showPass}
+            placeholderTextColor={'rgba(255,255,255,0.7)'}
+            underlineColorAndroid='transparent'
+          />
+          </View>
 
+      <View style={styles.inputContainer}>
+          
+          <TextInput
+            style={styles.input}
+            placeholder={'Email'} 
+            secureTextEntry={this.state.showPass}
+            placeholderTextColor={'rgba(255,255,255,0.7)'}
+            underlineColorAndroid='transparent'
+          />
+          </View>
+
+      <View style={styles.inputContainer}>
+          
+          <TextInput
+            style={styles.input}
+            placeholder={'Password'} 
+            secureTextEntry={this.state.showPass}
+            placeholderTextColor={'rgba(255,255,255,0.7)'}
+            underlineColorAndroid='transparent'
+          />
+          </View>
+
+      <View style={styles.inputContainer}>
+          
+          <TextInput
+            style={styles.input}
+            placeholder={'Re-enter Password'} 
+            secureTextEntry={this.state.showPass}
+            placeholderTextColor={'rgba(255,255,255,0.7)'}
+            underlineColorAndroid='transparent'
+          />
+          </View>
+
+
+{/* 
           <TouchableOpacity style={styles.btnEye}
             onPress = {this.showPass.bind(this)}>
             <Icon name={this.state.press == false ? 'ios-eye-outline' : 'ios-eye-off-outline'}
               size={26} color={'rgba(255,255,255,0.7)'} />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
           <TouchableOpacity style={styles.btnLogin}>
-            <Text style={styles.text}>Login</Text>
+            <Text style={styles.text}>Signup</Text>
           </TouchableOpacity>
 
-        </View>
+        
 
       </ImageBackground>
     );
   }
 }
-
 const styles = StyleSheet.create({
   backgroundContainer: {
     flex: 1,
@@ -168,9 +209,4 @@ const styles = StyleSheet.create({
 
 
 });
-
-
-
-
-
 
