@@ -12,8 +12,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import bgImage from './assets/background.jpg'
-import logo from './assets/vd-logowhite.png'
+import bgImage from '../assets/background.jpg'
+import logo from '../assets/vd-logowhite.png'
 import Icon from 'react-native-vector-icons/Ionicons'
 
 
