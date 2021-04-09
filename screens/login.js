@@ -15,7 +15,7 @@ import {
 
 import bgImage from '../assets/background.jpg'
 import logo from '../assets/vd-logowhite.png'
- import Icon from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/Ionicons'
 
 const { width: WIDTH } = Dimensions.get('window')
 
@@ -75,7 +75,7 @@ export default class Example extends Component {
           />
 
           <TouchableOpacity style={styles.btnEye}
-            onPress = {this.showPass.bind(this)}>
+            onPress={this.showPass.bind(this)}>
             <Icon name={this.state.press == false ? 'ios-eye-outline' : 'ios-eye-off-outline'}
               size={26} color={'rgba(255,255,255,0.7)'} />
           </TouchableOpacity>
@@ -84,8 +84,8 @@ export default class Example extends Component {
             <Text style={styles.text}>Login</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity>
-            <Text style = {styles.signup}>Don't have a VoicD Account? Sign up</Text>
+          <TouchableOpacity onPress = {() =>this.props.navigation.navigate('Signup')}>
+            <Text style={styles.signup}>Don't have a VoicD Account? Sign up</Text>
           </TouchableOpacity>
 
         </View>
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   logoContainer: {
     alignItems: 'center',
     marginBottom: 50,
-    
+
   },
 
   logo: {
@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     height: 120,
     //paddingBottom:100
     //translateY:-40
-    
+
   },
 
   LogoText: {

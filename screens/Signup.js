@@ -125,6 +125,10 @@ export default class Signup extends Component {
           <TouchableOpacity style={styles.btnLogin}>
             <Text style={styles.text}>Signup</Text>
           </TouchableOpacity>
+          
+          <TouchableOpacity onPress = {() =>this.props.navigation.navigate('Login')}>
+            <Text style={styles.login}>Already have a VoicD Account? Login</Text>
+          </TouchableOpacity>
 
         
 
@@ -204,6 +208,13 @@ const styles = StyleSheet.create({
     color: 'rgba(255,255,255,0.7)',
     fontSize: 16,
     //fontWeight: '900',
+    textAlign: 'center'
+  },
+
+  login: {
+    color: 'rgba(255,255,255,0.7)',
+    fontSize: 16,
+    justifyContent: 'center',
     textAlign: 'center'
   }
 
