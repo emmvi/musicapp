@@ -7,6 +7,7 @@ import {
   StyleSheet,
   Text,
   View,
+  ScrollView,
   TextInput,
   Dimensions,
   Touchable,
@@ -46,51 +47,54 @@ export default class Example extends Component {
 
   render() {
     return (
-      <ImageBackground source={bgImage} style={styles.backgroundContainer}>
-        <View style={styles.logoContainer}>
-          <Image source={logo} style={styles.logo} />
-          {/* <Text style={styles.LogoText}> LOGIN </Text> */}
-        </View>
+     // <ScrollView>
+        <ImageBackground source={bgImage} style={styles.backgroundContainer}>
+          <View style={styles.logoContainer}>
+            <Image source={logo} style={styles.logo} />
+            {/* <Text style={styles.LogoText}> LOGIN </Text> */}
+          </View>
 
-        <View style={styles.inputContainer}>
-          <Icon name={'ios-person-outline'} size={25} color={'rgba(255,255,255,0.7)'}
-            style={styles.inputIcon} />
-          <TextInput
-            style={styles.input}
-            placeholder={'Username'} paddingLeft={60}
-            placeholderTextColor={'rgba(255,255,255,0.7)'}
-            underlineColorAndroid='transparent'
-          />
-        </View>
+          <View style={styles.inputContainer}>
+            <Icon name={'ios-person-outline'} size={25} color={'rgba(255,255,255,0.7)'}
+              style={styles.inputIcon} />
+            <TextInput
+              style={styles.input}
+              placeholder={'Username'} paddingLeft={60}
+              placeholderTextColor={'rgba(255,255,255,0.7)'}
+              underlineColorAndroid='transparent'
+            />
+          </View>
 
-        <View style={styles.inputContainer}>
-          <Icon name={'ios-key-outline'} size={25} color={'rgba(255,255,255,0.7)'}
-            style={styles.inputIcon} />
-          <TextInput
-            style={styles.input}
-            placeholder={'Password'} paddingLeft={60}
-            secureTextEntry={this.state.showPass}
-            placeholderTextColor={'rgba(255,255,255,0.7)'}
-            underlineColorAndroid='transparent'
-          />
+          <View style={styles.inputContainer}>
+            <Icon name={'ios-key-outline'} size={25} color={'rgba(255,255,255,0.7)'}
+              style={styles.inputIcon} />
+            <TextInput
+              style={styles.input}
+              placeholder={'Password'} paddingLeft={60}
+              secureTextEntry={this.state.showPass}
+              placeholderTextColor={'rgba(255,255,255,0.7)'}
+              underlineColorAndroid='transparent'
+            />
 
-          <TouchableOpacity style={styles.btnEye}
-            onPress={this.showPass.bind(this)}>
-            <Icon name={this.state.press == false ? 'ios-eye-outline' : 'ios-eye-off-outline'}
-              size={26} color={'rgba(255,255,255,0.7)'} />
-          </TouchableOpacity>
+            <TouchableOpacity style={styles.btnEye}
+              onPress={this.showPass.bind(this)}>
+              <Icon name={this.state.press == false ? 'ios-eye-outline' : 'ios-eye-off-outline'}
+                size={26} color={'rgba(255,255,255,0.7)'} />
+            </TouchableOpacity>
 
-          <TouchableOpacity style={styles.btnLogin}>
-            <Text style={styles.text}>Login</Text>
-          </TouchableOpacity>
+            <TouchableOpacity style={styles.btnLogin}
+            onPress={() => this.props.navigation.navigate('Home')}
+            >
+              <Text style={styles.text}>Login</Text>
+            </TouchableOpacity>
 
-          <TouchableOpacity onPress = {() =>this.props.navigation.navigate('Signup')}>
-            <Text style={styles.signup}>Don't have a VoicD Account? Sign up</Text>
-          </TouchableOpacity>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('Signup')}>
+              <Text style={styles.signup}>Don't have a VoicD Account? Sign up</Text>
+            </TouchableOpacity>
 
-        </View>
-
-      </ImageBackground>
+          </View>
+        </ImageBackground>
+     // </ScrollView>
     );
   }
 }

@@ -15,6 +15,7 @@ import {
 import bgImage from '../assets/background.jpg'
 import logo from '../assets/vd-logowhite.png'
 import Icon from 'react-native-vector-icons/Ionicons'
+import { ScrollView } from 'react-native-gesture-handler';
 
 
 const { width: WIDTH } = Dimensions.get('window')
@@ -44,78 +45,79 @@ export default class Signup extends Component {
   }
   render() {
     return (
-      <ImageBackground source={bgImage} style={styles.backgroundContainer}>
-        <View style={styles.logoContainer}>
-          <Image source={logo} style={styles.logo} />
-          {/* <Text style={styles.LogoText}> LOGIN </Text> */}
-        </View>
+      <ScrollView>
+        <ImageBackground source={bgImage} style={styles.backgroundContainer}>
+          <View style={styles.logoContainer}>
+            <Image source={logo} style={styles.logo} />
+            {/* <Text style={styles.LogoText}> LOGIN </Text> */}
+          </View>
 
-        <View style={styles.inputContainer}>
-          
-          <TextInput
-            style={styles.input}
-            placeholder={'First Name'} 
-            placeholderTextColor={'rgba(255,255,255,0.7)'}
-            underlineColorAndroid='transparent'
-          />
-        </View>
+          <View style={styles.inputContainer}>
 
-        <View style={styles.inputContainer}>
-         
-          <TextInput
-            style={styles.input}
-            placeholder={'Last Name'} 
-            secureTextEntry={this.state.showPass}
-            placeholderTextColor={'rgba(255,255,255,0.7)'}
-            underlineColorAndroid='transparent'
-          />
+            <TextInput
+              style={styles.input}
+              placeholder={'First Name'}
+              placeholderTextColor={'rgba(255,255,255,0.7)'}
+              underlineColorAndroid='transparent'
+            />
+          </View>
+
+          <View style={styles.inputContainer}>
+
+            <TextInput
+              style={styles.input}
+              placeholder={'Last Name'}
+              secureTextEntry={this.state.showPass}
+              placeholderTextColor={'rgba(255,255,255,0.7)'}
+              underlineColorAndroid='transparent'
+            />
           </View>
           <View style={styles.inputContainer}>
-         
-          <TextInput
-            style={styles.input}
-            placeholder={'Username'} 
-            secureTextEntry={this.state.showPass}
-            placeholderTextColor={'rgba(255,255,255,0.7)'}
-            underlineColorAndroid='transparent'
-          />
+
+            <TextInput
+              style={styles.input}
+              placeholder={'Username'}
+              secureTextEntry={this.state.showPass}
+              placeholderTextColor={'rgba(255,255,255,0.7)'}
+              underlineColorAndroid='transparent'
+            />
           </View>
 
-      <View style={styles.inputContainer}>
-          
-          <TextInput
-            style={styles.input}
-            placeholder={'Email'} 
-            secureTextEntry={this.state.showPass}
-            placeholderTextColor={'rgba(255,255,255,0.7)'}
-            underlineColorAndroid='transparent'
-          />
+          <View style={styles.inputContainer}>
+
+            <TextInput
+              style={styles.input}
+              placeholder={'Email'}
+              secureTextEntry={this.state.showPass}
+              placeholderTextColor={'rgba(255,255,255,0.7)'}
+              underlineColorAndroid='transparent'
+            />
           </View>
 
-      <View style={styles.inputContainer}>
-          
-          <TextInput
-            style={styles.input}
-            placeholder={'Password'} 
-            secureTextEntry={this.state.showPass}
-            placeholderTextColor={'rgba(255,255,255,0.7)'}
-            underlineColorAndroid='transparent'
-          />
+          <View style={styles.inputContainer}>
+
+            <TextInput
+              style={styles.input}
+              placeholder={'Password'}
+              secureTextEntry={this.state.showPass}
+              placeholderTextColor={'rgba(255,255,255,0.7)'}
+              underlineColorAndroid='transparent'
+            />
           </View>
 
-      <View style={styles.inputContainer}>
-          
-          <TextInput
-            style={styles.input}
-            placeholder={'Re-enter Password'} 
-            secureTextEntry={this.state.showPass}
-            placeholderTextColor={'rgba(255,255,255,0.7)'}
-            underlineColorAndroid='transparent'
-          />
+          <View style={styles.inputContainer}>
+
+            <TextInput
+              style={styles.input}
+              placeholder={'Re-enter Password'}
+              secureTextEntry={this.state.showPass}
+              placeholderTextColor={'rgba(255,255,255,0.7)'}
+              underlineColorAndroid='transparent'
+            />
           </View>
 
 
-{/* 
+          {/* 
           <TouchableOpacity style={styles.btnEye}
             onPress = {this.showPass.bind(this)}>
             <Icon name={this.state.press == false ? 'ios-eye-outline' : 'ios-eye-off-outline'}
@@ -125,14 +127,14 @@ export default class Signup extends Component {
           <TouchableOpacity style={styles.btnLogin}>
             <Text style={styles.text}>Signup</Text>
           </TouchableOpacity>
-          
-          <TouchableOpacity onPress = {() =>this.props.navigation.navigate('Login')}>
+
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
             <Text style={styles.login}>Already have a VoicD Account? Login</Text>
           </TouchableOpacity>
 
-        
 
-      </ImageBackground>
+        </ImageBackground>
+      </ScrollView>
     );
   }
 }
@@ -148,7 +150,7 @@ const styles = StyleSheet.create({
   logoContainer: {
     alignItems: 'center',
     marginBottom: 50,
-    
+
   },
 
   logo: {
@@ -156,7 +158,7 @@ const styles = StyleSheet.create({
     height: 120,
     //paddingBottom:100
     //translateY:-40
-    
+
   },
 
   LogoText: {

@@ -21,15 +21,17 @@ import bgImage from '../assets/homebackground.png'
 import logo from '../assets/vd-logowhite.png'
 import Icon from 'react-native-vector-icons/Ionicons'
 
-import TabNavigator from './Navigator';
 
-const Home  = ({navigation}) => {
+
+
+const Profile = props => {
     return (
         <View>
-            <Text>Home</Text>
+            <Text>Profile</Text>       
         </View>
     )
-};
+}
+
 
 const styles = StyleSheet.create({
     backgroundContainer: {
@@ -41,4 +43,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Home;
+export default Profile;
